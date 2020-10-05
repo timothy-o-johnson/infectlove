@@ -1,8 +1,9 @@
 var express = require('express')
+var login = require('./login')
 var app = express()
 var port = 3000
 var database = 'infect_love_website'
-var login = 'FFBlhXjFTBCkUo5C'
+var login = login.login()
 var connectionString = `mongodb+srv://InfectLoveAdmin:${login}@infectlove0.7wwgn.mongodb.net/${database}?authSource=admin&replicaSet=InfectLove0-shard-0&readPreference=primary&ssl=true`
 
 var bodyParser = require('body-parser')
