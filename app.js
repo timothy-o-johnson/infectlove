@@ -14,16 +14,13 @@ app.use(
   })
 )
 
+app.use(express.static(__dirname + "/public/"))
+
 var mongoose = require('mongoose')
 mongoose.Promise = global.Promise
 mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true
-})
-
-var nameSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String
 })
 
 var definitionSchema = new mongoose.Schema({
@@ -40,7 +37,7 @@ app.get('/', (req, res) => {
 app.post('/addDefinition', (req, res) => {
   // console.log({req, res})
   var myData = new User(req.body)
-  // console.log(myData)
+  console.log(req.body)
   myData
     .save()
     .then(item => {

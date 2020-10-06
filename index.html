@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Intro to Node and MongoDB</title>
-    </head>
+  <head>
+    <title>Infect Love</title>
+    <link type="text/css" href="css/styles.css" rel="stylesheet">
+  </head>
 
-    <body>
-        <h1>Intro to Node and MongoDB</h1>
-        <form method="post" action="/addDefinition">
-        <label>Enter Your ID and definition</label><br>
-        <input type="number" name="_id" placeholder="Enter ID..." required>
-        <input type="text" name="definition" placeholder="Enter definition..." required>
-        <input type="submit" value= "Add Definition">
-        </form>
-    </body>
+  <body>
+    <section id="home">
+      <h1>InfectLove.Com</h1>
+      <div>
+        <picture>
+          <source media="(min-width:650px)" srcset="images/how-to-change-the-world.jpg" />
+          <source media="(min-width:465px)" srcset="images/how-to-change-the-world.jpg" />
+          <img src="images/how-to-change-the-world.jpg" alt="change-the-world" style="width:auto;" />
+        </picture>
+      </div>
+    </section>
+    <section id="whats-your-definition">
+      <h1>What's Your Definition of Love?</h1>
+      <form method="post" action="/addDefinition">
+        <label>Enter Your ID and definition</label><br />
+        <input type="number" name="_id" placeholder="Enter ID..." required />
+        <input
+          type="text"
+          name="definition"
+          placeholder="Enter definition..."
+          required
+        />
+        <input type="submit" value="Add Definition" />
+      </form>
+    </section>
+  </body>
 </html>
