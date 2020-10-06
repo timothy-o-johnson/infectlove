@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Infect Love</title>
-    <link type="text/css" href="css/styles.css" rel="stylesheet">
+    <link type="text/css" href="css/styles.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -10,12 +10,20 @@
       <h1>InfectLove.Com</h1>
       <div>
         <picture>
-          <source media="(min-width:650px)" srcset="images/how-to-change-the-world.jpg" />
-          <source media="(min-width:465px)" srcset="images/how-to-change-the-world.jpg" />
-          <img src="images/how-to-change-the-world.jpg" alt="change-the-world" style="width:auto;" />
+          <source
+            media="(min-width:650px)"
+            srcset="images/how-to-change-the-world.jpg"
+          />
+          <source
+            media="(min-width:465px)"
+            srcset="images/how-to-change-the-world.jpg"
+          />
+          <img class="center" src="images/how-to-change-the-world.jpg" alt="change-the-world"
+          style="width:500px; height:500px;" />
         </picture>
       </div>
     </section>
+
     <section id="whats-your-definition">
       <h1>What's Your Definition of Love?</h1>
       <form method="post" action="/addDefinition">
@@ -30,5 +38,7 @@
         <input type="submit" value="Add Definition" />
       </form>
     </section>
+
+    <section id="definitions"></section>
   </body>
 </html>
