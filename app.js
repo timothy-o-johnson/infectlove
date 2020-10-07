@@ -38,11 +38,13 @@ app.post('/addDefinition', (req, res) => {
   // console.log({req, res})
   var myData = new User(req.body)
   console.log(req.body)
+  // today, 10/6/20 2:40pm:   1602009700527
   myData
     .save()
     .then(item => {
       console.log(item)
-      res.send('item saved to database')
+      res.sendFile(__dirname + '/index.html')
+      // res.send('item saved to database')
     })
     .catch(err => {
       res.status(400), send('unable to save to database')
