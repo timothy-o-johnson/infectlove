@@ -25,29 +25,37 @@ mongoose.connect(connectionString, {
 
 var definitionSchema = new mongoose.Schema({
   _id: Number,
-  definition: String
+  author: String,
+  definition: String,
+  date: String
 })
 
 var User = mongoose.model('definitions', definitionSchema)
 
 app.get('/', (req, res) => {
+  //console.log('req', req)
   res.sendFile(__dirname + '/index.html')
 })
 
 app.post('/addDefinition', (req, res) => {
-  // console.log({req, res})
   var myData = new User(req.body)
-  console.log(req.body)
-  // today, 10/6/20 2:40pm:   1602009700527
+  
+  // add 
+  var day0 = 1602009700527 // 10/6/20 2:40pm: 1602009700527
+  myData['_id'] = Date.now() - day0 
+  myData['date'] = Date.now()
+
+  console.log('myData', myData)
+  
   myData
     .save()
-    .then(item => {
-      console.log(item)
+    .then(definition => {
+      console.log(definition)
+      // insert confirmation message
       res.sendFile(__dirname + '/index.html')
-      // res.send('item saved to database')
     })
     .catch(err => {
-      res.status(400), send('unable to save to database')
+      res.status(400), send('unable to save to database; error: ' + err)
     })
 })
 

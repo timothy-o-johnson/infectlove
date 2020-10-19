@@ -26,16 +26,16 @@
 
     <section id="whats-your-definition">
       <h1>What's Your Definition of Love?</h1>
-      <form method="post" action="/addDefinition">
-        <label>Enter Your ID and definition</label><br />
-        <input type="number" name="_id" placeholder="Enter ID..." required />
-        <input
+      <form class="center" method="post" action="/addDefinition">
+       <input
           type="text"
           name="definition"
           placeholder="Enter definition..."
           required
         />
-        <input type="submit" value="Add Definition" />
+        <input type="text" name="author" placeholder="Your name..." required />
+       
+        <input type="submit" value="Submit" />
       </form>
     </section>
 
