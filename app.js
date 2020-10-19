@@ -40,7 +40,9 @@ app.get('/', (req, res) => {
 app.post('/addDefinition', (req, res) => {
   var myData = new User(req.body)
   
-  // add 
+  // add date and id
+  // https://docs.mongodb.com/manual/reference/method/db.collection.count/
+  
   var day0 = 1602009700527 // 10/6/20 2:40pm: 1602009700527
   myData['_id'] = Date.now() - day0 
   myData['date'] = Date.now()
